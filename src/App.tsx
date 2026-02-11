@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { currentTheme, getThemeClasses } from './config/theme';
 import Header from './components/Header';
 import VideoPlayer from './components/VideoPlayer';
 import VideoDescription from './components/VideoDescription';
@@ -53,6 +54,21 @@ const dummyVideos = [
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const themeClasses = getThemeClasses();
+
+  // Apply theme class to body
+  useEffect(() => {
+    const body = document.body;
+    if (currentTheme === 'light') {
+      body.classList.add('light-theme');
+      body.style.backgroundColor = '#ffffff';
+      body.style.color = '#1a1a1a';
+    } else {
+      body.classList.remove('light-theme');
+      body.style.backgroundColor = '#060e1a';
+      body.style.color = '#e2e8f0';
+    }
+  }, []);
 
   useEffect(() => {
     // Simulate loading time for premium feel
@@ -75,7 +91,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-navy-950 animate-fade-in">
+    <div className={`min-h-screen ${themeClasses.bg} animate-fade-in`}>
       <Header />
 
       <main className="max-w-[1440px] mx-auto p-6">
