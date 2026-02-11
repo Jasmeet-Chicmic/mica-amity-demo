@@ -64,7 +64,7 @@ export default function VideoDescription({
 
           <p
             className={`text-[15px] leading-relaxed max-w-3xl ${
-              theme.isLight ? 'text-white/80' : theme.textMuted
+              theme.isLight ? 'text-black/80' : theme.textMuted
             }`}
           >
             {description}
