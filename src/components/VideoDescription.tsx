@@ -1,4 +1,4 @@
-import { Clock, BarChart3, BookOpen, Users, Award, TrendingUp } from 'lucide-react';
+import { Clock, BarChart3, BookOpen, Users, Award, TrendingUp, GraduationCap } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
 interface VideoDescriptionProps {
@@ -134,6 +134,32 @@ export default function VideoDescription({
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Instructor Section */}
+        <div className={`mt-6 pt-6 border-t ${theme.border}`}>
+          <div className={`flex items-start gap-4 p-5 ${theme.isLight ? 'bg-white' : 'bg-navy-800/30'} backdrop-blur-sm rounded-xl border ${theme.border} transition-all duration-300 hover:border-gold-500/30 hover-lift group`}>
+            {/* Icon */}
+            <div className={`p-3 ${theme.isLight ? 'bg-[#F9C602]/10' : 'bg-gold-500/10'} rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shrink-0`}>
+              <GraduationCap className={`w-6 h-6 ${theme.isLight ? 'text-[#F9C602]' : 'text-gold-400'} transition-all duration-300`} />
+            </div>
+            
+            {/* Instructor Details */}
+            <div className="flex-1 min-w-0">
+              <div className={`text-xs font-semibold uppercase tracking-wider mb-2 ${theme.isLight ? 'text-[#0D2A4B]/60' : theme.textMuted}`}>
+                Instructor
+              </div>
+              <h3 className={`text-lg font-bold mb-1 ${theme.isLight ? 'text-[#0D2A4B]' : theme.text} transition-colors`}>
+                Dr. Adel Ahmed
+              </h3>
+              <p className={`text-sm ${theme.isLight ? 'text-[#0D2A4B]/80' : theme.textSecondary} mb-2 leading-relaxed`}>
+                Professor of Accounting & Ethical Finance
+              </p>
+              <p className={`text-xs ${theme.isLight ? 'text-[#0D2A4B]/60' : theme.textMuted} leading-relaxed`}>
+                Member, Research Center of Excellence for Sustainability
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Additional Info Bar */}

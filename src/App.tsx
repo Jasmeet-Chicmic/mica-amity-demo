@@ -7,27 +7,33 @@ import VideoList from './components/VideoList';
 import ChatWidget from './components/ChatWidget';
 import LoadingScreen from './components/LoadingScreen';
 
+// Import local video file (uncomment and add your video file to src/assets/videos/)
+import localVideo from './assets/videos/amity.mp4';
+
 const dummyVideos = [
   {
     id: 1,
-    title: 'Strategic Management & Business Analytics',
-    thumbnail: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800',
-    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-    duration: '36:20',
-    views: '2.4k',
-    isActive: true,
-  },
-  {
-    id: 2,
-    title: 'Financial Markets & Investment Strategies',
+    title: 'Week 1 Recap & Concept of Economic Reality',
     thumbnail: 'https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=800',
     videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
     duration: '28:15',
     views: '1.8k',
   },
   {
+    id: 2,
+    title: 'International Financial Statement Analysis',
+    thumbnail: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800',
+    // Use local video: uncomment the line below and comment out the videoUrl line
+    videoUrl: localVideo,
+    // videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    duration: '30:00',
+    views: '2.4k',
+    isActive: true,
+  },
+  
+  {
     id: 3,
-    title: 'Leadership & Organizational Behavior',
+    title: 'Diagnostic Pre-Knowledge Test Review',
     thumbnail: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
     videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
     duration: '42:30',
@@ -35,7 +41,7 @@ const dummyVideos = [
   },
   {
     id: 4,
-    title: 'Digital Marketing & Consumer Psychology',
+    title: 'The Four Core Financial Statements',
     thumbnail: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800',
     videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
     duration: '31:45',
@@ -43,7 +49,7 @@ const dummyVideos = [
   },
   {
     id: 5,
-    title: 'International Business & Global Trade',
+    title: 'Purpose of the Income Statement',
     thumbnail: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
     videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
     duration: '25:50',
@@ -52,7 +58,7 @@ const dummyVideos = [
 ];
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(1);
+  const [selectedVideo, setSelectedVideo] = useState(2);
   const [isLoading, setIsLoading] = useState(true);
   const themeClasses = getThemeClasses();
 
@@ -107,10 +113,10 @@ function App() {
             <VideoDescription
               badge="MODULE 3 — LESSON 7"
               title={activeVideo.title}
-              description="Explore advanced concepts in business strategy, analytical frameworks, and real-world case studies from the Amity University MBA program."
-              duration="36 min"
+              description="Explore the structure, purpose, and analytical techniques of the Income Statement within an international reporting environment. This session focuses on IFRS and US GAAP comparisons, profitability interpretation, and economic reality adjustments."
+              duration="30 min"
               level="Intermediate"
-              lessons={12}
+              lessons={5}
               enrolled="2.4k"
             />
 

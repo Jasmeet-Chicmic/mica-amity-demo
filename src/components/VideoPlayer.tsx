@@ -100,7 +100,7 @@ export default function VideoPlayer({ thumbnail, videoUrl }: VideoPlayerProps) {
       <div className="relative aspect-video bg-navy-900 group">
         <video
           ref={videoRef}
-          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover"
           poster={thumbnail}
           preload="metadata"
           playsInline
